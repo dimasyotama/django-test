@@ -10,6 +10,7 @@ urlpatterns = [
     path('division-list/', views.divisionList, name="division-list"),
     path('division-detail/<int:pk>', views.division_detail, name="division-detail"),
     path('division-delete/<int:pk>', views.delete_division, name="division-delete"),
+    path("division-update/<int:pk>", views.update_division, name="division-update"),
 
     #Employee URL
     path('create-employee/', views.create_employee, name="create-employee"),

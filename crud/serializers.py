@@ -15,13 +15,16 @@ class DivisionListandDetailSerializer(serializers.ModelSerializer):
         fields = ("id", "division_name", "created_at")
 
 class EmployeeCreatedSerializer(serializers.ModelSerializer):
+    hire_date = serializers.DateField(format="%Y-%m-%d")
     class Meta:
         model = Employee
-        fields = ("id", "first_name", "last_name", "address", "hire_date", "divison")
-
+        fields = ("first_name", "last_name", "address", "hire_date", "division")
+    
 class EmployeeSerializer(serializers.ModelSerializer):
     hire_date = serializers.DateField(format="%Y-%m-%d")
-    division = DivisionCreatedSerializer(many=True)
+    created_at = serializers.DateTimeField(format="%d %B %Y %H:%M:%S")
+    updated_at = serializers.DateTimeField(format="%d %B %Y %H:%M:%S")
+    division = DivisionListandDetailSerializer(many=False)
     class Meta:
         model = Employee
         fields = ("id","first_name", "last_name", "address", "created_at", "updated_at", "hire_date", "division")
