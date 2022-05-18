@@ -41,3 +41,4 @@ Employee
 | DEL             | http://djangotest.pythonanywhere.com/api/employee-delete/2      |
 | PUT             | http://djangotest.pythonanywhere.com/api/employee-update/3      |
 
+List Record Using Pagination, that allow only 2 record every pages
